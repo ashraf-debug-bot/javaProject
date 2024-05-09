@@ -1,0 +1,45 @@
+package busReservation;
+
+public class Bus {
+	
+	
+	 private static int busNo;
+	private boolean ac;
+	 private  static int capacity;
+
+	
+	Bus(int no, boolean ac , int cap){
+		this.busNo =no;
+		this.ac=ac;
+		this.capacity=cap;
+	}
+	public static  int getbusNo() {
+		return busNo;
+	}
+	public void setbusNo(int no) {
+		busNo = no;
+	}
+	public static int getcap() { 
+		return capacity;
+	}
+	public void setcap(int c) {
+		capacity=c;
+	}
+	public boolean getac() { 
+		return ac;
+	}
+	public void setcap(boolean ac) {
+		ac = ac;
+	}
+	String newline =System.lineSeparator();
+public void display() {
+	System.out.print("the bus number is : "+ busNo +newline+ "the availability of Ac :"+ ac +newline+ "Total Capacity : "+ capacity+ newline);
+	
+}
+	
+	public static void main(String[] args) {
+		
+
+	}
+
+}

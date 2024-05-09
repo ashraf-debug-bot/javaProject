@@ -1,0 +1,37 @@
+package busReservation;
+import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class BusDemo {
+
+    public static void main(String[] args) throws ParseException {
+        int userOption = 1;
+        ArrayList<Bus> buses = new ArrayList<Bus>();
+        ArrayList<booking> book = new ArrayList<booking>();
+        buses.add(new Bus(1, true, 2));
+        buses.add(new Bus(2, false, 3));
+        buses.add(new Bus(3, true, 3));
+
+        for (Bus b : buses) {
+            b.display();
+        }
+        Scanner obj = new Scanner(System.in);
+        while (userOption == 1) {
+            System.out.println("Press 1 to book and 2 to exit");
+            userOption = obj.nextInt();
+            if (userOption == 1) {
+                booking newBooking = new booking();
+                if (newBooking.isbooking(buses, book)) {
+                    book.add(newBooking);
+                    System.out.println("Booking is confirmed");
+                    for (booking b : book) {
+                        System.out.println(b);
+                    }
+                } else {
+                    System.out.println("Sorry, the bus is full or not available on this date.");
+                }
+            }
+        }
+    }
+}
